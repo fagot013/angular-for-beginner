@@ -1,0 +1,28 @@
+.color-title{
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.color-picker{
+
+}
+
+.color-sample {
+    height: 50px;
+    width: 50px;
+    border: 1px solid gray;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-sample-blue {
+    background: #1976d2;
+}
+
+.color-sample-red {
+    background: #b13138;
+
+}
