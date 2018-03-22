@@ -1,10 +1,12 @@
 import {Component, Input} from "@angular/core";
 
+declare const module:any;
+
 @Component({
     selector:'search-box',
-    template: `<input placeholder="{{text}}" #input>
-              <button class="btn-clear"(click)="clear(input)">Clear</button> `
-
+    moduleId: module.id,
+    templateUrl:'search-box.component.html',
+    styleUrls:['search-box.component.css']
 })
 export class SearchBox {
 
