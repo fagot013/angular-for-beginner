@@ -19,10 +19,10 @@
     <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
     <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
     
-    <script src="systemjs.config.js"></script>
+    <script src="/systemjs.config.js"></script>
     <script>
 
-        document.SYSTEMJS_CONFIG.map.app = 'app';
+        document.SYSTEMJS_CONFIG.map.app = '.';
 
         document.SYSTEMJS_CONFIG.packages.app = {main: 'app.ts', defaultExtension: 'ts'};
 

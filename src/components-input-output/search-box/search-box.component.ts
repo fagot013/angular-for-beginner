@@ -17,5 +17,4 @@ export class SearchBox {
         console.log('Clear clicked ...');
         input.value = '';
     }
-
 }
