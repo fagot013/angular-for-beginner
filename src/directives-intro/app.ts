@@ -5,8 +5,11 @@ import { CollapseOnClick } from './collapse-on-click.directive';
 
 @Component({
     selector: 'app',
-    template:`
-        <div collapse-on-click class="collapsed card card-strong disabled-text-selection">
+    template: `
+        <div collapse-on-click [collapsed]='collapsed' (collapsed)='onToggle($event)' #cp='collapsible'
+             class="card card-strong disabled-text-selection"
+             [class.collapsed]='cp.collapsed'
+        >
             <i class="md-icon collapsible-indicator">arrow_drop_down</i>
             <div class="collapsible-section">
                 This page section is collapsible, double click it and it will collapse or expand.
@@ -14,16 +17,20 @@ import { CollapseOnClick } from './collapse-on-click.directive';
         </div>
     `
 })
-export class App{
+export class App {
+    collapsed = false;
 
+    onToggle(collapsed) {
+        console.log(collapsed);
+    }
 }
 
 @NgModule({
     declarations: [App, CollapseOnClick],
     imports: [BrowserModule],
-    bootstrap:[App]
+    bootstrap: [App]
 })
-export class AppModule{
+export class AppModule {
 
 }
 
