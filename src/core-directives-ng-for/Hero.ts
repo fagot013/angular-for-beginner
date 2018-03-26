@@ -10,4 +10,7 @@ export class Hero {
     @Input()
     name: string;
 
+    @Input()
+    marvel = false;
+
 }

@@ -22,8 +22,11 @@ const HEROES = [
                 <!--<th>Last</th>-->
             </thead>
             <tbody>
-                <tr *ngFor='let hero of heroes; trackBy: track(hero)
-                ;let i = index; let isOdd = odd; let isEven = even; let isFirst = first; let isLast = last'>
+                <tr *ngFor='let hero of heroes;
+                    trackBy: track(hero);
+                    let i = index; let isOdd = odd; let isEven = even; let isFirst = first; let isLast = last'
+                    [ngClass]="{marvel:hero.marvel}"
+                >
                     <td>{{hero.name}}</td>
                     <td>{{i}}</td>
                     <!--<td>{{isEven}}</td>-->
@@ -43,5 +46,11 @@ export class Heroes {
 
     track(hero) {
         return hero ? hero.id: undefined;
+    }
+
+    get styles() {
+        return {
+            color: 'red'
+        }
     }
 }
