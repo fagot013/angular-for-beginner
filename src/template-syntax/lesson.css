@@ -1,0 +1,26 @@
+.color-sample {
+    background: darkred;
+    color: white;
+    padding: 5px 10px;
+    border:1px solid gray;
+    border-radius: 4px;
+    width: 175px;
+}
+
+input, button {
+    display: block;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+}
+
+
+input, button, .color-sample {
+    /*box-sizing: border-box;*/
+    margin-bottom: 15px;
+}
+
+input[required] {
+    border-color: red;
+}
