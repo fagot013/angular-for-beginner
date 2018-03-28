@@ -10,7 +10,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
         <span><label>Message3:</label>{{0 == 0}}</span>
         <span><label>Message4:</label>{{condition ? 'Truthy' : 'Falsy'}}</span>
         <span><label>Message5:</label>{{calculatedValue}}</span>
-        <span><label>Message6:</label>{{vm?.value || 'Default!'}}</span>
+        <!--<span><label>Message6:</label>{{vm?.value || 'Default!'}}</span>-->
     `
 })
 export class App {
