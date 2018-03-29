@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/http-server -c-1 ."
+    "start": "./node_modules/.bin/ts-node src/lessons-server.ts"
   },
   "repository": {
     "type": "git",
