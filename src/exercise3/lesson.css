@@ -1,0 +1,24 @@
+.lessons-list {
+    padding: 10px 10px 0 10px;
+    display: table-cell;
+    margin-bottom: 15px;
+}
+
+.lessons-list tr {
+    border-bottom: 1px solid darkgray;
+    cursor: pointer;
+}
+
+.lessons-list td {
+    padding-bottom: 5px;
+}
+
+.lesson-logo {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.add-lesson {
+    width: 250px;
+    margin-bottom: 15px;
+}

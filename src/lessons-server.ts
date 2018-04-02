@@ -22,9 +22,11 @@ app.route('/lessons')
         //res.status(500).send();
     })
     .delete((req,res)=>{
-        console.log('deleting lesson ...');
-        var lesson = JSON.parse(req.body);
-        const index = lessons.indexOf(lesson);
+        const lessonId = req.query.id;
+        console.log("deleting lesson ", lessonId);
+        const index = _.findIndex(lessons, {id: +lessonId});
+        console.log('lessons:'+lessons);
+        console.log('index:'+index);
         lessons.splice(index, 1);
         res.status(200).send();
     })
