@@ -19,6 +19,14 @@ const lessons = lessonsData;
 app.route('/lessons')
     .get((req,res)=>{
         res.status(200).json(lessons);
+        //res.status(500).send();
+    })
+    .delete((req,res)=>{
+        console.log('deleting lesson ...');
+        var lesson = JSON.parse(req.body);
+        const index = lessons.indexOf(lesson);
+        lessons.splice(index, 1);
+        res.status(200).send();
     })
     .post((req,res)=>{
         lessons.push(JSON.parse(req.body));
