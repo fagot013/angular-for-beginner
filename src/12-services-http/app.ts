@@ -9,6 +9,8 @@ import { HttpModule } from '@angular/http';
 @Component({
     selector: 'app',
     template: `
+        <input class="add-lesson" placeholder="Add Lesson" 
+               (keyup.enter)="lessonsService.createLesson(input.value)" #input>
         <lessons-list [lessons]="lessonsService.lessons"></lessons-list>
     `
 })

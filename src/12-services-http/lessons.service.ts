@@ -1,6 +1,6 @@
 import { lessonsData } from './lessons';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -18,6 +18,19 @@ export class LessonService {
             .map(res => res.json())
             .subscribe(
                 lessonsData => this.lessons = lessonsData
+            );
+    }
+
+    createLesson(description:string) {
+        const lesson = {description};
+        this.lessons.push(lesson);
+
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json; charset=utf-8');
+        this.http.post('/lessons', JSON.stringify(lesson), headers)
+            .subscribe(
+                ()=>{},
+                err => console.log(err)
             );
     }
 
