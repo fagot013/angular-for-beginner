@@ -21,21 +21,20 @@ app.route('/lessons')
         res.status(200).json(lessons);
         //res.status(500).send();
     })
-    .delete((req,res)=>{
-        const lessonId = req.query.id;
-        console.log("deleting lesson ", lessonId);
-        const index = _.findIndex(lessons, {id: +lessonId});
-        console.log('lessons:'+lessons);
-        console.log('index:'+index);
-        lessons.splice(index, 1);
-        res.status(200).send();
-    })
     .post((req,res)=>{
         lessons.push(JSON.parse(req.body));
         res.status(200).send();
-    })
-    ;
+    });
 
+app.route('/lessons/:id')
+    .delete((req,res) => {
+        const lessonId = req.params.id;
+        console.log('deleting lesson ', lessonId);
+        const index = _.findIndex(lessons, {id: +lessonId});
+        console.log('index ', index);
+        lessons.splice(index, 1);
+        res.status(200).send();
+    });
 
 var server = app.listen(9090, function(){
     console.log('Server running at http://localhost:' + server.address().port)
